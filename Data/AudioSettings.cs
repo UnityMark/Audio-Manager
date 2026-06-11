@@ -1,4 +1,4 @@
-using UnityEngine;
+using System;
 using UnityEngine.Audio;
 
 public enum TypeVolume
@@ -7,7 +7,8 @@ public enum TypeVolume
     MFX
 }
 
-public class AudioSettings : MonoBehaviour
+[Serializable]
+public class AudioSettings
 {
     public AudioMixerGroup AudioMixerGroup;
     public TypeVolume TypeVolume;

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[CreateAssetMenu(menuName = "Configs/Default Sounds")]
+[CreateAssetMenu(menuName = "Audio/Default Sounds")]
 public class DefaultSound : SerializedScriptableObject
 {
     [SerializeField] private Dictionary<string, AudioResource> soundMap;
+    public Dictionary<string, AudioResource> SoundMap => soundMap;
 
     public AudioResource GetSound(string id)
     {
