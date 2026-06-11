@@ -1,45 +1,45 @@
 # Unity Audio Manager
 
-Простой и удобный аудио-менеджер для проектов на Unity, написанный на C#. Позволяет централизованно управлять звуковыми эффектами, музыкой и аудио-настройками в игре.
+A simple and lightweight audio management system for Unity projects written in C#. It provides a centralized way to handle sound effects, background music, and audio settings.
 
-## 🛠 Структура проекта
+## 🛠 Project Structure
 
-* **AudioManager.cs** — основной синглтон-класс для управления воспроизведением звуков.
-* **AudioObject.cs / AudioObject.prefab** — объект-обертка для AudioSource, который воспроизводит конкретный звук и возвращается в пул.
-* **AudioButton.cs** — вспомогательный скрипт для быстрой привязки звуков к кнопкам UI.
-* **AudioDebugger.cs** — скрипт для отладки аудио-системы в реальном времени.
-* **Data / Default Sounds.asset** — ScriptableObject для хранения списка аудиоклипов и настроек по умолчанию.
+* **AudioManager.cs** — The core singleton manager responsible for playing and controlling audio.
+* **AudioObject.cs / AudioObject.prefab** — A wrapper object containing a Unity `AudioSource` to handle individual playback.
+* **AudioButton.cs** — A helper script to quickly attach sound effects to UI Buttons.
+* **AudioDebugger.cs** — A utility script for real-time audio debugging in the editor.
+* **Data / Default Sounds.asset** — A ScriptableObject configuration file holding default audio clips and settings.
 
-## 🚀 Возможности
-* Централизованное управление звуками (SFX) и музыкой (Music).
-* Хранение аудио-данных через `ScriptableObject`.
-* Готовый компонент для озвучки UI-кнопок в один клик.
-* Базовые файлы конфигурации аудио-настроек.
+## 🚀 Features
+* Centralized management for Sound Effects (SFX) and Music.
+* Configurable audio data asset utilizing `ScriptableObject`.
+* Drop-in component for UI button click sounds.
+* Modular structure easy to integrate into any project.
 
-## 📦 Установка
+## 📦 Installation
 
-1. Склонируйте репозиторий или перенесите файлы проекта в папку `Assets/` вашего Unity проекта.
-2. Убедитесь, что префаб `AudioObject` настроен и ссылается на соответствующий скрипт.
+1. Clone this repository or copy the project files into your Unity project's `Assets/` directory.
+2. Ensure the `AudioObject` prefab is properly set up with its corresponding script attached.
 
-## 💻 Использование
+## 💻 Usage
 
-### Настройка звуков
-1. Создайте или используйте готовый файл настроек из папки `Data` (`Default Sounds.asset`).
-2. Добавьте туда свои аудиоклипы и задайте им уникальные ключи/идентификаторы.
+### Setting Up Audio
+1. Locate or create an audio settings file in the `Data` folder (`Default Sounds.asset`).
+2. Add your audio clips and assign them unique keys/identifiers.
 
-### Воспроизведение из кода
+### Playing Audio via Code
 ```csharp
-// Пример вызова звукового эффекта по названию
+// Play a sound effect by its identifier
 AudioManager.Instance.PlaySound("ClickSound");
 
-// Пример воспроизведения фоновой музыки
+// Play background music
 AudioManager.Instance.PlayMusic("MainMenuTheme");
 ```
 
-### Озвучка кнопок (UI)
-1. Добавьте скрипт `AudioButton` на любой объект с компонентом `Button`.
-2. В инспекторе укажите название звука, который должен воспроизводиться при нажатии.
+### UI Button Integration
+1. Attach the `AudioButton` script to any GameObject containing a Unity `Button` component.
+2. Specify the sound key in the Inspector to play on click.
 
-## 📄 Лицензия
+## 📄 License
 
-Проект распространяется под лицензией MIT. Подробнее см. файл `LICENSE`.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
